@@ -40,21 +40,21 @@ public final class Checkout {
 
     private void validateProduct(final Product product) {
         if (isNull(product)) {
-            throw new IllegalArgumentException("com.notonthehighstreet.onlinemarketplace.Product to be added to scan can't be null");
+            throw new IllegalArgumentException("Product to be added to scan can't be null");
         }
 
         String productCode = product.getCode();
         if (isNull(productCode) || productCode.isEmpty()) {
-            throw new IllegalArgumentException("com.notonthehighstreet.onlinemarketplace.Product code can't be null or empty");
+            throw new IllegalArgumentException("Product code can't be null or empty");
         }
         String productName = product.getName();
         if (isNull(productName) || productName.isEmpty()) {
-            throw new IllegalArgumentException("com.notonthehighstreet.onlinemarketplace.Product name can't be null or empty");
+            throw new IllegalArgumentException("Product name can't be null or empty");
         }
         Double productPrice = product.getPrice();
 
         if (isNull(productPrice) || productPrice <= 0) {
-            throw new IllegalArgumentException("com.notonthehighstreet.onlinemarketplace.Product price should be a positive number");
+            throw new IllegalArgumentException("Product price should be a positive number");
         }
 
 

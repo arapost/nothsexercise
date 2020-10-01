@@ -40,7 +40,7 @@ public class CheckoutTest {
         Checkout checkout = new Checkout(promotionalRules);
         assertThatThrownBy(() -> checkout.scan(null))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("com.notonthehighstreet.onlinemarketplace.Product to be added to scan can't be null");
+                .hasMessage("Product to be added to scan can't be null");
     }
 
     @Test
@@ -50,7 +50,7 @@ public class CheckoutTest {
         Product product = new Product("", "Travel Card Holder", 9.25);
         assertThatThrownBy(() -> checkout.scan(product))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("com.notonthehighstreet.onlinemarketplace.Product code can't be null or empty");
+                .hasMessage("Product code can't be null or empty");
     }
 
     @Test
@@ -60,7 +60,7 @@ public class CheckoutTest {
         Product product = new Product(null, "Travel Card Holder", 9.25);
         assertThatThrownBy(() -> checkout.scan(product))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("com.notonthehighstreet.onlinemarketplace.Product code can't be null or empty");
+                .hasMessage("Product code can't be null or empty");
     }
 
     @Test
@@ -70,7 +70,7 @@ public class CheckoutTest {
         Product product = new Product("001", "", 9.25);
         assertThatThrownBy(() -> checkout.scan(product))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("com.notonthehighstreet.onlinemarketplace.Product name can't be null or empty");
+                .hasMessage("Product name can't be null or empty");
     }
 
     @Test
@@ -80,7 +80,7 @@ public class CheckoutTest {
         Product product = new Product("001", null, 9.25);
         assertThatThrownBy(() -> checkout.scan(product))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("com.notonthehighstreet.onlinemarketplace.Product name can't be null or empty");
+                .hasMessage("Product name can't be null or empty");
     }
 
     @Test
@@ -90,7 +90,7 @@ public class CheckoutTest {
         Product product = new Product("001", "test", null);
         assertThatThrownBy(() -> checkout.scan(product))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("com.notonthehighstreet.onlinemarketplace.Product price should be a positive number");
+                .hasMessage("Product price should be a positive number");
     }
 
     @Test
@@ -100,7 +100,7 @@ public class CheckoutTest {
         Product product = new Product("001", "test", -12.0);
         assertThatThrownBy(() -> checkout.scan(product))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("com.notonthehighstreet.onlinemarketplace.Product price should be a positive number");
+                .hasMessage("Product price should be a positive number");
     }
 
     @Test
