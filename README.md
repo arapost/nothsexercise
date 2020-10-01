@@ -1,4 +1,4 @@
-##Online marketplace coding exercise
+## Online marketplace coding exercise
 
 This is a solution to the coding exercise given my NotOnTheHighStreet
 
